@@ -1,91 +1,131 @@
-# TeleBot-mani
-Telegram Bot with Gemini AI Integration
+# TeleBot-mani: Telegram Bot with Gemini AI Integration
 
-A powerful Telegram bot that integrates Google's Gemini AI for intelligent interactions, image analysis, and web search capabilities.
+## Description
+A powerful **Telegram bot** that integrates **Google's Gemini AI** for intelligent interactions, image analysis, and web search capabilities.
 
+---
 
-🔑 Key Features
+## 🔑 Key Features
 
-User Registration
+### 💼 User Registration
+- Saves `first_name`, `username`, and `chat_id` in **MongoDB**
+- Phone number verification via **Telegram's contact button**
+- Secure user data storage
 
-  1.Saves first_name, username, and chat_id in MongoDB
-  
-  2.Phone number verification via Telegram's contact button
-  
-  3.Secure user data storage
+### 📚 Gemini-Powered Chat
+- Integrates with **Google's Gemini AI API**
+- Stores complete chat history with timestamps
+- **Context-aware** conversations
 
-Gemini-Powered Chat
+### 🖼️ Image/File Analysis
+- Processes images (**JPG, PNG**) and **PDFs**
+- Uses **Gemini AI** for content description
+- **OCR text extraction**
+- Stores file metadata in **MongoDB**
 
-  1.Integrates with Google's Gemini AI API
-  
-  2.Stores complete chat history with timestamps
-  
-  3.Context-aware conversations
+### 🌐 Web Search
+- Custom **web search** functionality
+- **AI-powered** search result summaries
+- Returns relevant web links
+- Integrated with chat interface
 
-Image/File Analysis
+---
 
-  1.Processes images (JPG, PNG) and PDFs
-  
-  2.Uses Gemini AI for content description
-  
-  3.OCR text extraction
-  
-  4.Stores file metadata in MongoDB
+## ⚙️ Requirements
+To install dependencies, run:
+```bash
+pip install python-telegram-bot google-generativeai pymongo python-dotenv Pillow pytesseract serpapi
+```
 
-Web Search
-  
-  1.Custom web search functionality
-  
-  2.AI-powered search result summaries
-  
-  3.Returns relevant web links
-  
-  4.Integrated with chat interface
+### Required Libraries
+- `python-telegram-bot`
+- `google-generativeai`
+- `pymongo`
+- `python-dotenv`
+- `Pillow`
+- `pytesseract`
+- `serpapi`
 
-⚙️ Requirements
+---
 
-python-telegram-bot
-
-google-generativeai
-
-pymongo
-
-python-dotenv
-
-Pillow
-
-pytesseract
-
-serpapi
-
-🔒 Environment Variables
-
+## 🔒 Environment Variables
+Create a **.env** file with the following:
+```env
 BOT_TOKEN=your_telegram_bot_token
-
 MONGO_URI=your_mongodb_connection_string
-
 GEMINI_API_KEY=your_gemini_api_key
-
 SERPAPI_API_KEY=your_serpapi_api_key
+```
 
-🚀 Setup
+---
 
-Clone the repository
+## 🚀 Setup Instructions
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/TeleBot-mani.git
+   cd TeleBot-mani
+   ```
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Configure environment variables:**
+   Ensure your **.env** file is properly set up.
+4. **Install Tesseract OCR:**
+   - **Windows:** Download and install from [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki)
+   - **Linux (Ubuntu/Debian):**
+     ```bash
+     sudo apt install tesseract-ocr
+     ```
+5. **Run the bot:**
+   ```bash
+   python bot.py
+   ```
 
-Install dependencies: pip install -r requirements.txt
+---
 
-Configure environment variables
+## 📝 Note
+- **MongoDB instance with TLS support** is required.
+- **Tesseract OCR** must be installed for text extraction.
+- **Rate limiting** implemented for all API calls.
+- **Comprehensive error handling and logging** included.
 
-Install Tesseract OCR
+---
 
-Run the bot: python bot.py
+## 📝 Pictorial Representation
+### System Architecture:
+```
++------------------+        +------------------+
+| Telegram User   | --->   | TeleBot          |
++------------------+        +------------------+
+       |                           |
+       v                           v
++------------------+        +------------------+
+| Gemini AI API   |        | MongoDB Database |
++------------------+        +------------------+
+       |                           |
+       v                           v
++------------------+        +------------------+
+| Web Search API  |        | OCR & File Store |
++------------------+        +------------------+
+```
 
-📝 Note
+---
 
-Requires MongoDB instance with TLS support
+## 🌐 Deployment
+Consider hosting on:
+- **Heroku**
+- **AWS Lambda**
+- **Google Cloud Functions**
 
-Tesseract OCR must be installed for text extraction
+Ensure **environment variables** are set securely.
 
-Rate limiting implemented for all API calls
+---
 
-Comprehensive error handling and logging
+## 👥 Author
+- **Peruri Rohith Manikanta**
+- **Email:** rohithmanikantaperuri@gmail.com
+- **LinkedIn:** [rohith-manikanta-peruri](https://www.linkedin.com/in/rohith-manikanta-peruri-a3323b2b8/)
+
+---
+Feel free to **fork, modify, and use** as needed! 🚀
